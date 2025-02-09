@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Transparency & Distance Slider</title>
+    <link rel="stylesheet" href="er.css">
+</head>
+<body>
+
+    <h2>Please adjust the slider until the computer is barely visible.</h2>
+    
+    <div class="image-container">
+        <img src="https://www.transparentpng.com/download/computer/6o4Q2H-png-windows-desktop-set-software-game-coding-.png" id="image">
+    </div>
+
+    <div class="slider-container">
+        <input type="range" min="0" max="100" value="100" id="opacity-slider">
+        <div class="slider-value"><span id="opacityValue"></span></div>
+    </div>
+
+    <script>
+        const opacitySlider = document.getElementById("opacity-slider");
+        const opacityValue = document.getElementById("opacityValue");
+        const image = document.getElementById("image");
+
+        opacitySlider.oninput = function() {
+            let opacityVal = this.value / 100; // Convert to range 0-1
+            image.style.opacity = opacityVal;
+            opacityValue.textContent = this.value + "%";
+        }
+    </script>
+	
+	<br>
+	
+	<h2>Please adjust the slider until the dog and the cat are friends.</h2>
+    
+    <div class="image-container" id="imageContainer">
+        <img src="https://pngimg.com/d/cat_PNG50447.png" alt="Cat">
+        <img src="https://www.freeiconspng.com/thumbs/dog-png/dog-png-30.png" alt="Dog">
+    </div>
+
+    <div class="slider-container">
+        <input type="range" min="0" max="200" value="200" id="distance-slider">
+    </div>
+
+    <script>
+        const distanceSlider = document.getElementById("distance-slider");
+        const distanceValue = document.getElementById("distanceValue");
+        const imageContainer = document.getElementById("imageContainer");
+
+        distanceSlider.oninput = function() {
+            let spacing = this.value + "px";
+            imageContainer.style.gap = spacing;
+            distanceValue.textContent = spacing;
+        }
+    </script>
+	
+	<br>
+	
+	<h2>Please adjust the slider until the number 5 becomes the number 9.</h2>
+
+    <div class="image-container">
+        <img src="https://png.pngtree.com/png-clipart/20210310/ourmid/pngtree-gold-number-5-five-png-image_3031762.jpg" id="image-changer">
+    </div>
+
+    <div class="slider-container">
+        <input type="range" min="0" max="4" value="0" id="image-slider">
+        <div class="slider-value"><span id="imageValue"></span></div>
+    </div>
+
+    <script>
+        const imageSlider = document.getElementById("image-slider");
+        const imageValue = document.getElementById("imageValue");
+        const changingImage = document.getElementById("image-changer");
+
+        // Array of images
+        const images = [
+		    "https://png.pngtree.com/png-clipart/20210310/ourmid/pngtree-gold-number-5-five-png-image_3031762.jpg",
+            "https://img.freepik.com/free-psd/adorable-kitten-playing-happy-feline-paws-up_191095-78088.jpg",
+            "https://i.pinimg.com/474x/39/1a/fb/391afb1d13a6886f3180e0234ad57521.jpg",
+            "https://freebiehive.com/wp-content/uploads/2024/01/Crying-Soyjak-No-PNG.jpg",
+			"https://png.pngtree.com/png-clipart/20240126/original/pngtree-nine-english-number-9-small-fresh-artistic-word-png-image_14158636.png",
+        ];
+
+        imageSlider.oninput = function() {
+            let index = this.value; // Get value from slider
+            changingImage.src = images[index]; // Change image source
+            imageValue.textContent = parseInt(index) + 1; // Display image number
+        }
+    </script>
+	
+	<br>
+	
+	<h2>Please adjust the slider until you stop adjusting the slider.</h2>
+    
+    <div class="image-container">
+    
+    </div>
+
+    <div class="slider-container">
+        <input type="range" min="0" max="100" value="0">
+    </div>
+	
+	<br>
+	
+	<h2>Which of the two made-up words below is most appealing to you:</h2>
+    
+    <div class="image-container">
+    </div>
+	
+	<p>Occuboinkal -------------------------------- Scrumtush</p>
+
+    <div class="slider-container">
+        <input type="range" min="0" max="100" value="0">
+    </div>
+	
+	<br>
+	
+	<h2>Please do not adjust the slider.</h2>
+    
+    <div class="image-container">
+    
+    </div>
+
+    <div class="slider-container">
+        <input type="range" min="0" max="100" value="50">
+    </div>
+	
+
+</body>
+</html>
